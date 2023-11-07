@@ -1,0 +1,203 @@
+[gd_scene load_steps=18 format=3 uid="uid://cs7tf827ch4pw"]
+
+[ext_resource type="Script" path="res://Scripts/end_menu.gd" id="1_gyr5u"]
+[ext_resource type="Texture2D" uid="uid://ygthrvxo30x1" path="res://Assets/Large_Box.png" id="1_insaj"]
+[ext_resource type="FontFile" uid="uid://b4elfqu00k80x" path="res://Font/04B_30__.TTF" id="2_qvhli"]
+[ext_resource type="Texture2D" uid="uid://d2c6j8ogoqn4j" path="res://Assets/Small_Box.png" id="3_cmh5t"]
+[ext_resource type="Texture2D" uid="uid://btbhjugxwfkqv" path="res://Assets/Pixilart Sprite Sheet.png" id="4_dys0a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwvhy"]
+atlas = ExtResource("4_dys0a")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yi4w"]
+atlas = ExtResource("4_dys0a")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkipt"]
+atlas = ExtResource("4_dys0a")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp87a"]
+atlas = ExtResource("4_dys0a")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygcvv"]
+atlas = ExtResource("4_dys0a")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66ani"]
+atlas = ExtResource("4_dys0a")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2u68"]
+atlas = ExtResource("4_dys0a")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j64pj"]
+atlas = ExtResource("4_dys0a")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp8jq"]
+atlas = ExtResource("4_dys0a")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnfto"]
+atlas = ExtResource("4_dys0a")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jechm"]
+atlas = ExtResource("4_dys0a")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0dnad"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwvhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yi4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkipt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp87a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygcvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66ani")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2u68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j64pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pp8jq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnfto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jechm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="End_Menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_gyr5u")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(700, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_insaj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Empty_Label" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Lose_Win" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qvhli")
+theme_override_font_sizes/font_size = 35
+text = "Voce Perdeu!!"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Score_container" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Score_text" type="Label" parent="MarginContainer/VBoxContainer/Score_container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qvhli")
+theme_override_font_sizes/font_size = 35
+text = "Score:"
+
+[node name="Score_number" type="Label" parent="MarginContainer/VBoxContainer/Score_container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qvhli")
+theme_override_font_sizes/font_size = 35
+text = "0000"
+
+[node name="Coins_taken_container" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Coin_taken_text" type="Label" parent="MarginContainer/VBoxContainer/Coins_taken_container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qvhli")
+theme_override_font_sizes/font_size = 35
+text = "Containers:"
+
+[node name="Coins_number" type="Label" parent="MarginContainer/VBoxContainer/Coins_taken_container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qvhli")
+theme_override_font_sizes/font_size = 35
+text = "00"
+
+[node name="Buttons_container" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="Restart_Button" type="Button" parent="MarginContainer/VBoxContainer/Buttons_container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qvhli")
+theme_override_font_sizes/font_size = 25
+text = "Restart"
+flat = true
+
+[node name="Restart_Sprite" type="Sprite2D" parent="MarginContainer/VBoxContainer/Buttons_container/Restart_Button"]
+show_behind_parent = true
+position = Vector2(85, 19)
+scale = Vector2(3.7, 3)
+texture = ExtResource("3_cmh5t")
+
+[node name="Menu_Button" type="Button" parent="MarginContainer/VBoxContainer/Buttons_container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qvhli")
+theme_override_font_sizes/font_size = 25
+text = "Menu"
+flat = true
+
+[node name="Menu_Sprite" type="Sprite2D" parent="MarginContainer/VBoxContainer/Buttons_container/Menu_Button"]
+show_behind_parent = true
+position = Vector2(51, 19)
+scale = Vector2(3.7, 3)
+texture = ExtResource("3_cmh5t")
+
+[node name="Setinha" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.3, 1.3)
+sprite_frames = SubResource("SpriteFrames_0dnad")
+autoplay = "default"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Buttons_container/Restart_Button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Buttons_container/Menu_Button" to="." method="_on_menu_button_pressed"]

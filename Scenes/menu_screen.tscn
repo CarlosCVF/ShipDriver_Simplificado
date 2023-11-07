@@ -1,0 +1,184 @@
+[gd_scene load_steps=18 format=3 uid="uid://xha6chseo001"]
+
+[ext_resource type="Script" path="res://Scripts/menu_screen.gd" id="1_75x5a"]
+[ext_resource type="Texture2D" uid="uid://c6yhj1bu7w5ls" path="res://Assets/Menu_Screen.png" id="1_uqf20"]
+[ext_resource type="Texture2D" uid="uid://d2c6j8ogoqn4j" path="res://Assets/Small_Box.png" id="2_3lfie"]
+[ext_resource type="FontFile" uid="uid://b4elfqu00k80x" path="res://Font/04B_30__.TTF" id="3_gindn"]
+[ext_resource type="Texture2D" uid="uid://btbhjugxwfkqv" path="res://Assets/Pixilart Sprite Sheet.png" id="3_h4do7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlkpg"]
+atlas = ExtResource("3_h4do7")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajt7m"]
+atlas = ExtResource("3_h4do7")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5wdm"]
+atlas = ExtResource("3_h4do7")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tje4"]
+atlas = ExtResource("3_h4do7")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cma0"]
+atlas = ExtResource("3_h4do7")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypluj"]
+atlas = ExtResource("3_h4do7")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m503"]
+atlas = ExtResource("3_h4do7")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_130n6"]
+atlas = ExtResource("3_h4do7")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poxh5"]
+atlas = ExtResource("3_h4do7")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwtp3"]
+atlas = ExtResource("3_h4do7")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06jbl"]
+atlas = ExtResource("3_h4do7")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6kkex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlkpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajt7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5wdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tje4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cma0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypluj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m503")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_130n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poxh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwtp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06jbl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Menu_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_75x5a")
+
+[node name="BackGround" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_uqf20")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -168.5
+offset_right = 250.0
+offset_bottom = 168.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Game_Name" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_gindn")
+theme_override_font_sizes/font_size = 40
+text = "Ship Driver"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu_Buttons" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Start" type="Button" parent="VBoxContainer/Menu_Buttons"]
+custom_minimum_size = Vector2(500, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gindn")
+theme_override_font_sizes/font_size = 45
+text = "Start"
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Menu_Buttons/Start"]
+show_behind_parent = true
+position = Vector2(250, 39.5)
+scale = Vector2(9.6, 3.61)
+texture = ExtResource("2_3lfie")
+
+[node name="Controls" type="Button" parent="VBoxContainer/Menu_Buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gindn")
+theme_override_font_sizes/font_size = 45
+text = "Controls"
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/Menu_Buttons/Controls"]
+show_behind_parent = true
+position = Vector2(250, 25)
+scale = Vector2(9.6, 3.6)
+texture = ExtResource("2_3lfie")
+
+[node name="Seta" type="Node2D" parent="."]
+position = Vector2(249, 262)
+metadata/_edit_group_ = true
+
+[node name="Option" type="AnimatedSprite2D" parent="Seta"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_6kkex")
+autoplay = "default"
+
+[connection signal="pressed" from="VBoxContainer/Menu_Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu_Buttons/Controls" to="." method="_on_controls_pressed"]

@@ -1,0 +1,167 @@
+[gd_scene load_steps=10 format=3 uid="uid://dnjrn8ii0n17a"]
+
+[ext_resource type="Texture2D" uid="uid://c6yhj1bu7w5ls" path="res://Assets/Menu_Screen.png" id="1_3n823"]
+[ext_resource type="Script" path="res://Scripts/controls.gd" id="1_6t6mc"]
+[ext_resource type="Texture2D" uid="uid://ygthrvxo30x1" path="res://Assets/Large_Box.png" id="2_g0cep"]
+[ext_resource type="Texture2D" uid="uid://d2c6j8ogoqn4j" path="res://Assets/Small_Box.png" id="3_jpwt7"]
+[ext_resource type="FontFile" uid="uid://b4elfqu00k80x" path="res://Font/04B_30__.TTF" id="4_se3k7"]
+[ext_resource type="Texture2D" uid="uid://jf0cpj5i2xuf" path="res://Assets/Setas/Up_key.png" id="6_3yc2j"]
+[ext_resource type="Texture2D" uid="uid://cok0sojnois3m" path="res://Assets/Setas/Down_key.png" id="7_tr4v7"]
+[ext_resource type="Texture2D" uid="uid://bmvs7cl6r68fm" path="res://Assets/Setas/Left_key.png" id="8_8iets"]
+[ext_resource type="Texture2D" uid="uid://d1t1eal8r5pnh" path="res://Assets/Setas/Right_key.png" id="9_vw7hg"]
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6t6mc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3n823")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(800, 570)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_g0cep")
+
+[node name="Controls_menu" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Buttons_Menu" type="HBoxContainer" parent="MarginContainer/Controls_menu"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="Back_button" type="Button" parent="MarginContainer/Controls_menu/Buttons_Menu"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("4_se3k7")
+theme_override_font_sizes/font_size = 30
+text = "Back"
+flat = true
+
+[node name="Back_sprite_button" type="Sprite2D" parent="MarginContainer/Controls_menu/Buttons_Menu/Back_button"]
+show_behind_parent = true
+position = Vector2(64, 20.375)
+scale = Vector2(2.40625, 2.08203)
+texture = ExtResource("3_jpwt7")
+
+[node name="Label" type="Label" parent="MarginContainer/Controls_menu"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_se3k7")
+theme_override_font_sizes/font_size = 45
+text = "Controles"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Controls_menu"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Text_key" type="Label" parent="MarginContainer/Controls_menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_se3k7")
+theme_override_font_sizes/font_size = 25
+text = "Acelerar: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Key" type="Label" parent="MarginContainer/Controls_menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_se3k7")
+theme_override_font_sizes/font_size = 25
+text = "W ou   "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text_key2" type="Label" parent="MarginContainer/Controls_menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_se3k7")
+theme_override_font_sizes/font_size = 25
+text = "Freiar: "
+horizontal_alignment = 1
+
+[node name="Key2" type="Label" parent="MarginContainer/Controls_menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_se3k7")
+theme_override_font_sizes/font_size = 25
+text = "S ou   "
+horizontal_alignment = 1
+
+[node name="Text_key3" type="Label" parent="MarginContainer/Controls_menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_se3k7")
+theme_override_font_sizes/font_size = 25
+text = "Virar para esquerda: "
+horizontal_alignment = 1
+
+[node name="Key3" type="Label" parent="MarginContainer/Controls_menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_se3k7")
+theme_override_font_sizes/font_size = 25
+text = "A ou   "
+horizontal_alignment = 1
+
+[node name="Text_key4" type="Label" parent="MarginContainer/Controls_menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_se3k7")
+theme_override_font_sizes/font_size = 25
+text = "Virar para a direita: "
+horizontal_alignment = 1
+
+[node name="Key4" type="Label" parent="MarginContainer/Controls_menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_se3k7")
+theme_override_font_sizes/font_size = 25
+text = "D ou   "
+horizontal_alignment = 1
+
+[node name="UpKey" type="Sprite2D" parent="."]
+position = Vector2(620, 260)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_3yc2j")
+
+[node name="DownKey" type="Sprite2D" parent="."]
+position = Vector2(620, 350)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_tr4v7")
+
+[node name="LeftKey" type="Sprite2D" parent="."]
+position = Vector2(620, 440)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_8iets")
+
+[node name="RightKey" type="Sprite2D" parent="."]
+position = Vector2(620, 528)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_vw7hg")
+
+[connection signal="pressed" from="MarginContainer/Controls_menu/Buttons_Menu/Back_button" to="." method="_on_back_button_pressed"]

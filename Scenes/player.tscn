@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://fgvoktiwheas"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_glvcx"]
+[ext_resource type="Texture2D" uid="uid://cbqlxyrqycxab" path="res://Assets/Conteinero.png" id="2_evo7q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlejx"]
+size = Vector2(216, 30.3922)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_glvcx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_evo7q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 1.81)
+scale = Vector2(1, 1.04)
+shape = SubResource("RectangleShape2D_nlejx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+rotation = 1.5708
+limit_left = -20000
+limit_top = -30000
+limit_right = 20000
+limit_bottom = 30000
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0

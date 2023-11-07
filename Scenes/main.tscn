@@ -1,0 +1,393 @@
+[gd_scene load_steps=40 format=3 uid="uid://uveq44umvve"]
+
+[ext_resource type="Script" path="res://Scripts/Mapa.gd" id="1_cyr4b"]
+[ext_resource type="Texture2D" uid="uid://dkdqpivvqry5x" path="res://Assets/Map.png" id="2_3dpru"]
+[ext_resource type="PackedScene" uid="uid://fgvoktiwheas" path="res://Scenes/player.tscn" id="2_l8et7"]
+[ext_resource type="Script" path="res://Scripts/Linha_Dragagem.gd" id="3_70gyk"]
+[ext_resource type="Texture2D" uid="uid://dbn0hvrkx5bpq" path="res://Assets/Coins_frames/pixil-frame-0.png" id="3_82m8w"]
+[ext_resource type="Texture2D" uid="uid://djyxkv7r25w16" path="res://Assets/Coins_frames/pixil-frame-1.png" id="4_gte5o"]
+[ext_resource type="Texture2D" uid="uid://7nfyvq27sqgo" path="res://Assets/Coins_frames/pixil-frame-10.png" id="5_bkn16"]
+[ext_resource type="Script" path="res://Scripts/Hud.gd" id="5_ihj8c"]
+[ext_resource type="Texture2D" uid="uid://d1rfaurrwoes1" path="res://Assets/Coins_frames/pixil-frame-2.png" id="6_4g7mo"]
+[ext_resource type="FontFile" uid="uid://b4elfqu00k80x" path="res://Font/04B_30__.TTF" id="6_ahw8r"]
+[ext_resource type="Texture2D" uid="uid://n2rqnhini8pt" path="res://Assets/Coins_frames/pixil-frame-3.png" id="7_yuvke"]
+[ext_resource type="Texture2D" uid="uid://cb2mhlnbeduio" path="res://Assets/Coins_frames/pixil-frame-4.png" id="8_eiaxr"]
+[ext_resource type="Texture2D" uid="uid://tirt1cxwh3tl" path="res://Assets/Coins_frames/pixil-frame-5.png" id="9_cyw7o"]
+[ext_resource type="Texture2D" uid="uid://bfvt0o2a51ltu" path="res://Assets/Coins_frames/pixil-frame-6.png" id="10_cqo06"]
+[ext_resource type="Texture2D" uid="uid://dnrngt3wv2qls" path="res://Assets/Coins_frames/pixil-frame-7.png" id="11_mcwji"]
+[ext_resource type="Texture2D" uid="uid://doaqrxjgpqwu0" path="res://Assets/Coins_frames/pixil-frame-8.png" id="12_qerfp"]
+[ext_resource type="Texture2D" uid="uid://tjlb87javs0r" path="res://Assets/Coins_frames/pixil-frame-9.png" id="13_pcqnt"]
+[ext_resource type="Texture2D" uid="uid://fx1k62oqd35o" path="res://Assets/Gold_Coins_Frames/pixil-frame-0.png" id="14_gwkxy"]
+[ext_resource type="Texture2D" uid="uid://b0abeoa03ggll" path="res://Assets/Gold_Coins_Frames/pixil-frame-1.png" id="15_t1q4x"]
+[ext_resource type="Texture2D" uid="uid://dt0vqew6wixyp" path="res://Assets/Gold_Coins_Frames/pixil-frame-10.png" id="16_6fuah"]
+[ext_resource type="Texture2D" uid="uid://dgp76ftspv4g" path="res://Assets/Gold_Coins_Frames/pixil-frame-2.png" id="16_31u1t"]
+[ext_resource type="Texture2D" uid="uid://br7frw0l8oocu" path="res://Assets/Gold_Coins_Frames/pixil-frame-3.png" id="18_8si73"]
+[ext_resource type="Texture2D" uid="uid://dlf7xxkugd1bc" path="res://Assets/Gold_Coins_Frames/pixil-frame-4.png" id="19_0uf6i"]
+[ext_resource type="Texture2D" uid="uid://bmja64bs6d1xj" path="res://Assets/Gold_Coins_Frames/pixil-frame-5.png" id="20_y1lpe"]
+[ext_resource type="Texture2D" uid="uid://b4qynb6eok6iy" path="res://Assets/Gold_Coins_Frames/pixil-frame-6.png" id="21_52hcb"]
+[ext_resource type="Texture2D" uid="uid://c8kaiaovc44mc" path="res://Assets/Gold_Coins_Frames/pixil-frame-7.png" id="22_wi23x"]
+[ext_resource type="Texture2D" uid="uid://p2mq4dposd6i" path="res://Assets/Gold_Coins_Frames/pixil-frame-8.png" id="23_8twcv"]
+[ext_resource type="Texture2D" uid="uid://cvphxoarcuo3k" path="res://Assets/Gold_Coins_Frames/pixil-frame-9.png" id="24_21b66"]
+[ext_resource type="PackedScene" uid="uid://b1j5y5tw6vdk4" path="res://Scenes/warning.tscn" id="28_ktw36"]
+[ext_resource type="Script" path="res://Scripts/Proximity_line.gd" id="29_k3lsd"]
+[ext_resource type="Script" path="res://Scripts/End_Game.gd" id="29_ub4u0"]
+[ext_resource type="Script" path="res://Scripts/FimDoCais.gd" id="31_vambd"]
+[ext_resource type="PackedScene" uid="uid://t5a8gvnewdbi" path="res://Scenes/Coin.tscn" id="32_w7vk6"]
+[ext_resource type="PackedScene" uid="uid://cs7tf827ch4pw" path="res://Scenes/end_menu.tscn" id="34_8vobf"]
+[ext_resource type="PackedScene" uid="uid://biccmrdfim3qw" path="res://Scenes/gold_coin.tscn" id="34_63wrt"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_e5o5n"]
+frames = 11
+speed_scale = 6.0
+frame_0/texture = ExtResource("3_82m8w")
+frame_1/texture = ExtResource("4_gte5o")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_4g7mo")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_yuvke")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("8_eiaxr")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("9_cyw7o")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("10_cqo06")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("11_mcwji")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("12_qerfp")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("13_pcqnt")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("5_bkn16")
+frame_10/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_sy7ft"]
+frames = 11
+speed_scale = 6.0
+frame_0/texture = ExtResource("14_gwkxy")
+frame_1/texture = ExtResource("15_t1q4x")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("16_31u1t")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("18_8si73")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("19_0uf6i")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("20_y1lpe")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("21_52hcb")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("22_wi23x")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("23_8twcv")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("24_21b66")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("16_6fuah")
+frame_10/duration = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm36f"]
+size = Vector2(124.448, 198.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64cm0"]
+size = Vector2(105, 140)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_cyr4b")
+
+[node name="Mapa" type="Sprite2D" parent="."]
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(-770, 3700)
+scale = Vector2(3, 3)
+texture = ExtResource("2_3dpru")
+
+[node name="Player" parent="." instance=ExtResource("2_l8et7")]
+position = Vector2(-1555, -678)
+rotation = 0.367281
+
+[node name="Linha_Dragagem" type="Area2D" parent="."]
+script = ExtResource("3_70gyk")
+
+[node name="Parede" type="CollisionPolygon2D" parent="Linha_Dragagem"]
+self_modulate = Color(1, 1, 1, 0)
+build_mode = 1
+polygon = PackedVector2Array(-3071, -1082, -3007, -1039, -2948, -1002, -2870, -961, -2809, -932, -2737, -903, -2618, -866, -2565, -853, -2466, -835, -2398, -826, -2271, -817, -2203, -812, -1716, -804, -1657, -813, -1606, -824, -1511, -853, -1403, -807, -1354, -712, -1315, -658, -1278, -613, -1236, -580, -1191, -547, -1072, -466, -1043, -450, -976, -406, -883, -353, -786, -306, -680, -268, -588, -234, -534, -217, -448, -193, -392, -180, -298, -175, 109, -159, 142, -150, 161, -141, 190, -122, 353, 30, 443, 117, 482, 181, 497, 224, 503, 254, 506, 268, 508, 303, 516, 389, 528, 540, 535, 612, 543, 670, 575, 885, 601, 1055, 621, 1148, 640, 1213, 668, 1289, 699, 1357, 746, 1444, 775, 1489, 812, 1539, 849, 1584, 897, 1637, 986, 1729, 1196, 1945, 1677, 2442, 1689, 2463, 1717, 2527, 1802, 2739, 1832, 2818, 1849, 2863, 1878, 2952, 1915, 3089, 1925, 3133, 1937, 3199, 1942, 3255, 1943, 3366, 1932, 3438, 1914, 3514, 1892, 3584, 1864, 3649, 1824, 3717, 1788, 3769, 1725, 3847, 1685, 3896, 1629, 3959, 1544, 4043, 1451, 4117, 1413, 4143, 1376, 4164, 1325, 4188, 1276, 4207, 1233, 4219, 1181, 4230, 1120, 4238, 1028, 4238, 993, 4233, 917, 4219, 782, 4186, 733, 4184, 654, 4175, 383, 4147, 281, 4143, 134, 4142, 59, 4149, 5, 4156, -57, 4168, -134, 4187, -257, 4229, -342, 4268, -402, 4299, -495, 4359, -544, 4395, -604, 4445, -687, 4525, -738, 4585, -781, 4639, -820, 4697, -848, 4741, -882, 4804, -910, 4863, -973, 5006, -1277, 5810, -1407, 6155, -1533, 6120, -1331, 5587, -1233, 5328, -1176, 5177, -1118, 5026, -1099, 4974, -1042, 4824, -1016, 4760, -973, 4677, -939, 4619, -902, 4562, -876, 4528, -841, 4480, -798, 4431, -673, 4283, -617, 4222, -567, 4176, -500, 4126, -447, 4091, -395, 4063, -340, 4039, -229, 4003, -108, 3983, -28, 3979, 37, 3981, 286, 4006, 522, 4031, 730, 4054, 982, 4086, 1089, 4093, 1171, 4086, 1291, 4042, 1370, 3996, 1444, 3937, 1492, 3890, 1567, 3801, 1619, 3735, 1686, 3631, 1728, 3557, 1762, 3462, 1779, 3370, 1781, 3239, 1763, 3150, 1750, 3102, 1735, 3062, 1710, 3011, 1676, 2955, 1608, 2868, 1519, 2750, 1178, 2308, 863, 1903, 771, 1774, 649, 1575, 602, 1479, 551, 1372, 493, 1202, 470, 1109, 417, 758, 356, 335, 334, 273, 310, 245, 284, 222, 197, 180, 126, 163, 59, 160, -6, 129, -125, 59, -175, 34, -242, 4, -405, -44, -795, -159, -923, -213, -1052, -290, -1362, -509, -1406, -524, -1459, -530, -1523, -524, -1563, -529, -1601, -544, -1669, -606, -1730, -645, -1813, -669, -1898, -676, -2346, -684, -2483, -698, -2597, -721, -2718, -753, -2819, -789, -2926, -837, -3026, -890, -3149, -974)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_ihj8c")
+
+[node name="Clock_Timer" type="Timer" parent="HUD/Control"]
+autostart = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Score_Container" type="HBoxContainer" parent="HUD/Control/MarginContainer"]
+custom_minimum_size = Vector2(190, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+alignment = 2
+
+[node name="Score_counter" type="Label" parent="HUD/Control/MarginContainer/Score_Container"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_ahw8r")
+theme_override_font_sizes/font_size = 20
+text = "Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score_number" type="Label" parent="HUD/Control/MarginContainer/Score_Container"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_ahw8r")
+theme_override_font_sizes/font_size = 20
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer_Container" type="HBoxContainer" parent="HUD/Control/MarginContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+alignment = 1
+
+[node name="Timer_Label" type="Label" parent="HUD/Control/MarginContainer/Timer_Container"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_ahw8r")
+theme_override_font_sizes/font_size = 20
+text = "Timer:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Label" parent="HUD/Control/MarginContainer/Timer_Container"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_ahw8r")
+theme_override_font_sizes/font_size = 20
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coin_container" type="HBoxContainer" parent="HUD/Control/MarginContainer"]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/separation = 2
+
+[node name="Coin_icon" type="TextureRect" parent="HUD/Control/MarginContainer/Coin_container"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("AnimatedTexture_e5o5n")
+
+[node name="Coins_counter" type="Label" parent="HUD/Control/MarginContainer/Coin_container"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_ahw8r")
+theme_override_font_sizes/font_size = 20
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gold_coin_container" type="HBoxContainer" parent="HUD/Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Gold_coin_icon" type="TextureRect" parent="HUD/Control/MarginContainer/Gold_coin_container"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_sy7ft")
+
+[node name="Gold_coin_counter" type="Label" parent="HUD/Control/MarginContainer/Gold_coin_container"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_ahw8r")
+theme_override_font_sizes/font_size = 20
+text = "00"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/Control/MarginContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 5
+
+[node name="Speed_container" type="Label" parent="HUD/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_ahw8r")
+theme_override_font_sizes/font_size = 20
+text = "Speed:"
+
+[node name="Speed_counter" type="Label" parent="HUD/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_ahw8r")
+theme_override_font_sizes/font_size = 20
+text = "00"
+
+[node name="Speed_nos" type="Label" parent="HUD/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("6_ahw8r")
+theme_override_font_sizes/font_size = 20
+text = "nos
+"
+
+[node name="End_Game" type="Area2D" parent="."]
+script = ExtResource("29_ub4u0")
+
+[node name="Final" type="CollisionShape2D" parent="End_Game"]
+position = Vector2(-1379.66, 5899.24)
+rotation = 0.383972
+shape = SubResource("RectangleShape2D_jm36f")
+
+[node name="Proximity_line" type="Area2D" parent="."]
+script = ExtResource("29_k3lsd")
+
+[node name="Limits" type="CollisionPolygon2D" parent="Proximity_line"]
+self_modulate = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-3071, -1041, -3120, -984, -2876, -846, -2631, -773, -2155, -705, -1723, -680, -1540, -574, -1439, -579, -1310, -527, -906, -265, -741, -199, -522, -134, -200, -45, 49, 75, 182, 93, 326, 154, 388, 216, 439, 482, 469, 758, 528, 1116, 562, 1260, 668, 1498, 783, 1687, 958, 1922, 1495, 2613, 1698, 2874, 1785, 3004, 1821, 3093, 1839, 3305, 1807, 3527, 1671, 3767, 1532, 3930, 1369, 4047, 1266, 4094, 1149, 4132, 976, 4135, 877, 4129, 578, 4069, 572, 4137, 825, 4156, 975, 4189, 1194, 4175, 1296, 4149, 1387, 4087, 1483, 4028, 1685, 3818, 1811, 3632, 1866, 3494, 1887, 3354, 1876, 3205, 1821, 2965, 1733, 2755, 1607, 2478, 818, 1642, 657, 1375, 561, 1119, 523, 905, 485, 610, 431, 250, 405, 167, 340, 92, 129, -64, 33, -106, -381, -144, -450, -157, -645, -214, -881, -298, -1007, -369, -1249, -531, -1335, -622, -1413, -787, -1513, -833, -1665, -784, -2272, -788, -2657, -844, -2867, -912)
+
+[node name="Warning" parent="." instance=ExtResource("28_ktw36")]
+visible = false
+
+[node name="Exit_Pier" type="Area2D" parent="."]
+script = ExtResource("31_vambd")
+
+[node name="Off_The_Pier" type="CollisionShape2D" parent="Exit_Pier"]
+position = Vector2(618, 4108)
+shape = SubResource("RectangleShape2D_64cm0")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Coin" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(-1021, -384)
+
+[node name="Coin2" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(-727, -201)
+
+[node name="Coin3" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(-340, -70)
+
+[node name="Coin4" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(414, 449)
+
+[node name="Coin5" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(575, 1159)
+
+[node name="Coin6" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(975, 1886)
+
+[node name="Coin7" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(1133, 2138)
+
+[node name="Coin8" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(1423, 2261)
+
+[node name="Coin9" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(1453, 2515)
+
+[node name="Coin10" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(1680, 2663)
+
+[node name="Coin11" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(1720, 2902)
+
+[node name="Coin12" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(1841, 3137)
+
+[node name="Coin13" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(1847, 3447)
+
+[node name="Coin14" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(1709, 3750)
+
+[node name="Coin15" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(1527, 3962)
+
+[node name="Coin16" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(1298, 4106)
+
+[node name="Coin17" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(984, 4197)
+
+[node name="Coin18" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(821, 4110)
+
+[node name="Coin19" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(-486, 4258)
+
+[node name="Coin20" parent="Node2D" instance=ExtResource("32_w7vk6")]
+position = Vector2(-143, 4065)
+
+[node name="Gold_coin" parent="Node2D" instance=ExtResource("34_63wrt")]
+position = Vector2(122, 135)
+
+[node name="End_Menu" parent="." instance=ExtResource("34_8vobf")]
+visible = false
+
+[connection signal="body_entered" from="Linha_Dragagem" to="Linha_Dragagem" method="_on_body_entered"]
+[connection signal="timeout" from="HUD/Control/Clock_Timer" to="HUD/Control" method="_on_clock_timer_timeout"]
+[connection signal="body_entered" from="End_Game" to="End_Game" method="_on_body_entered"]
+[connection signal="body_entered" from="Proximity_line" to="Proximity_line" method="_on_body_entered"]
+[connection signal="body_exited" from="Proximity_line" to="Proximity_line" method="_on_body_exited"]
+[connection signal="body_entered" from="Exit_Pier" to="Exit_Pier" method="_on_body_entered"]

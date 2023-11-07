@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1j5y5tw6vdk4"]
+
+[ext_resource type="Script" path="res://Scripts/Warning.gd" id="1_5f1qf"]
+[ext_resource type="Texture2D" uid="uid://ygthrvxo30x1" path="res://Assets/Large_Box.png" id="2_wcc05"]
+[ext_resource type="FontFile" uid="uid://b4elfqu00k80x" path="res://Font/04B_30__.TTF" id="3_aneya"]
+
+[node name="Warning" type="CanvasLayer"]
+script = ExtResource("1_5f1qf")
+
+[node name="Warning_box" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(350, 50)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Pop_up" type="MarginContainer" parent="Warning_box"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Warning_box/Pop_up"]
+layout_mode = 2
+texture = ExtResource("2_wcc05")
+
+[node name="Warnings" type="VBoxContainer" parent="Warning_box/Pop_up"]
+layout_mode = 2
+alignment = 1
+
+[node name="Velocity_Warning" type="Label" parent="Warning_box/Pop_up/Warnings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_aneya")
+theme_override_font_sizes/font_size = 13
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Proximity_Warning" type="Label" parent="Warning_box/Pop_up/Warnings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_aneya")
+theme_override_font_sizes/font_size = 13
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Penalty" type="Label" parent="Warning_box/Pop_up/Warnings"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_aneya")
+theme_override_font_sizes/font_size = 13
+text = "Perdera pontos por isso"
+horizontal_alignment = 1
